@@ -25,7 +25,7 @@ const Layout3 = ({
   return (
     <div className="layout3">
       <div className="title-menu">
-        <h1>{title || 'Sample app'}</h1>
+        <h1></h1>
 
         <Toast
           toastNotification={toastNotification}

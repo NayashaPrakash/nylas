@@ -5,7 +5,7 @@ import { NylasProvider } from '@nylas/nylas-react';
 import './styles/style.scss';
 import './styles/layout2style.scss';
 import './styles/styleComp.scss';
-import Generator from './components/Generate';
+import SummarizerApp from './components/Summarizer';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -16,7 +16,6 @@ root.render(
   <React.StrictMode>
     <NylasProvider serverBaseUrl={SERVER_URI}>
       <SideNav />
-      <Generator />
     </NylasProvider>
   </React.StrictMode>
 );

@@ -2,14 +2,19 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import EmailList from './EmailList';
 import EmailDetail from './EmailDetail';
+import SummarizerApp from '../components/Summarizer';
 import '../styles/email.scss';
 
 function EmailApp({ userEmail, emails, isLoading, serverBaseUrl, userId }) {
   const [selectedEmail, setSelectedEmail] = useState(null);
+  const [showSummarizer, setShowSummarizer] = useState(false);
 
   useEffect(() => {
     setSelectedEmail(null);
+    setShowSummarizer(false);
+
   }, [emails]);
+
 
   return (
     <>
@@ -29,11 +34,13 @@ function EmailApp({ userEmail, emails, isLoading, serverBaseUrl, userId }) {
               serverBaseUrl={serverBaseUrl}
               userId={userId}
             />
+           <SummarizerApp selectedEmailContent={selectedEmail ? selectedEmail.snippet : ''} />
           </>
         ) : (
           <p className="loading-text">No available email</p>
         )}
       </div>
+
       <div className="mobile-warning hidden-desktop">
         <h2>
           Email sample app is currently designed for a desktop experience.
@@ -42,6 +49,7 @@ function EmailApp({ userEmail, emails, isLoading, serverBaseUrl, userId }) {
           Visit Nylas dashboard for more use-cases: https://dashboard.nylas.com
         </p>
       </div>
+
     </>
   );
 }
@@ -55,3 +63,6 @@ EmailApp.propTypes = {
 };
 
 export default EmailApp;
+
+
+
