@@ -62,7 +62,6 @@ function Send() {
     <Layout3
       showMenu={!!userId}
       disconnectUser={disconnectUser}
-      title="Send email sample app"
       toastNotification={toastNotification}
       setToastNotification={setToastNotification}
     >

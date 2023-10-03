@@ -2,6 +2,7 @@ import { useNylas } from '@nylas/nylas-react';
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import IconDelete from '../components/icons/IconDelete.jsx';
+import Generator from '../components/Generate.jsx';
 
 function SendEmails({ userId, setToastNotification, style }) {
   const nylas = useNylas();
@@ -17,7 +18,7 @@ function SendEmails({ userId, setToastNotification, style }) {
     setBody('');
   };
 
-  const sendEmails = async ({ userId, to, body }) => {
+  const sendEmail = async ({ userId, to, body }) => {
     try {
       const url = 'http://localhost:9000/nylas/send';
 
@@ -61,6 +62,8 @@ function SendEmails({ userId, setToastNotification, style }) {
   };
 
   return (
+    <div>
+
     <form onSubmit={send} className={`email-compose-view ${style}`}>
       {!style && <h3 className="title">New message</h3>}
       <div className="input-container">
@@ -112,6 +115,10 @@ function SendEmails({ userId, setToastNotification, style }) {
         </button>
       </div>
     </form>
+    <Generator />
+
+    </div>
+
   );
 }
 

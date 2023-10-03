@@ -9,7 +9,7 @@ import { IconContext } from "react-icons/lib";
 
 const Nav = styled.div`
 background: #BCA37F;
-height: 80px;
+height: 60px;
 display: flex;
 justify-content: flex-start;
 align-items: center;
